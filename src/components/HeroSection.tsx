@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const games = ["BGMI", "FREE FIRE MAX", "VALORANT", "MLBB"];
+const games = [
+  { name: "BGMI", image: "/images/games/bgmi.jpg" },
+  { name: "FREE FIRE MAX", image: "/images/games/freefire.jpg" },
+  { name: "VALORANT", image: "/images/games/valorant.jpg" },
+  { name: "MLBB", image: "/images/games/mlbb.jpg" },
+];
 const duplicated = [...games, ...games, ...games, ...games];
 
 const HeroSection = () => {
@@ -57,9 +62,19 @@ const HeroSection = () => {
             {duplicated.map((game, i) => (
               <div
                 key={i}
-                className="inline-flex items-center mx-12 text-2xl md:text-3xl font-heading font-bold text-muted-foreground/30 hover:text-primary/60 transition-colors duration-500 cursor-default select-none tracking-[0.3em]"
+                className="inline-flex items-center mx-4 flex-shrink-0 select-none"
               >
-                {game}
+                <div className="relative w-[280px] md:w-[360px] h-[160px] md:h-[200px] rounded-lg overflow-hidden group">
+                  <img
+                    src={game.image}
+                    alt={game.name}
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-lg md:text-xl font-heading font-bold text-foreground/80 tracking-[0.2em]">
+                    {game.name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
