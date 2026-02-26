@@ -25,11 +25,13 @@ const HeroSection = () => {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[0.95] mb-6">
-            <span className="text-foreground">COMPETE.</span>
+            <span className="text-foreground">THE GRIND.</span>
             <br />
-            <span className="gradient-text">DOMINATE.</span>
+            <span className="text-foreground">THE RISE.</span>
             <br />
-            <span className="text-foreground">EVOLVE.</span>
+            <span className="text-foreground">THE FALL.</span>
+            <br />
+            <span className="gradient-text">ZEROPHASE!</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
