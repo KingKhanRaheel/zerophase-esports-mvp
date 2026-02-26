@@ -24,7 +24,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto">
 
-          <h1 className="md:text-7xl lg:text-8xl font-heading font-bold leading-[0.95] mb-6 my-[10px] py-px text-4xl">
+          <h1 className="md:text-7xl font-heading font-bold leading-[0.95] mb-6 my-[10px] py-px text-4xl lg:text-6xl">
             <span className="text-foreground px-0 mx-0 my-[5px]">THE GRIND.</span>
             <br />
             <span className="text-foreground">THE RISE.</span>
