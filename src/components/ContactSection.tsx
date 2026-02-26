@@ -13,8 +13,8 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
+
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
             GET IN <span className="text-primary">TOUCH</span>
           </h2>
@@ -30,13 +30,14 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-8"
-          >
+            className="space-y-8">
+
             <div className="flex items-start gap-4">
               <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Email</h4>
-                <p className="text-muted-foreground text-sm">contact@zerophase.gg</p>
+                <p className="text-muted-foreground text-sm">zerophaseesports@gmail.com
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -56,43 +57,42 @@ const ContactSection = () => {
           </motion.div>
 
           {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4"
-            onSubmit={(e) => e.preventDefault()}
-          >
+          <motion.form initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="space-y-4"
+          onSubmit={(e) => e.preventDefault()}>
+
             <Input
               placeholder="Your Name"
-              className="bg-card border-border focus:border-primary"
-            />
+              className="bg-card border-border focus:border-primary" />
+
             <Input
               type="email"
               placeholder="Your Email"
-              className="bg-card border-border focus:border-primary"
-            />
+              className="bg-card border-border focus:border-primary" />
+
             <Input
               placeholder="Subject"
-              className="bg-card border-border focus:border-primary"
-            />
+              className="bg-card border-border focus:border-primary" />
+
             <Textarea
               placeholder="Your Message"
               rows={5}
-              className="bg-card border-border focus:border-primary resize-none"
-            />
+              className="bg-card border-border focus:border-primary resize-none" />
+
             <Button
               type="submit"
-              className="w-full gradient-primary text-primary-foreground font-heading font-semibold tracking-wider hover:opacity-90 transition-opacity"
-            >
+              className="w-full gradient-primary text-primary-foreground font-heading font-semibold tracking-wider hover:opacity-90 transition-opacity">
+
               SEND MESSAGE
             </Button>
           </motion.form>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactSection;
