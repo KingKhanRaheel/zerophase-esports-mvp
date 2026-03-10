@@ -15,8 +15,8 @@ const games = [
 const duplicated = [...games, ...games, ...games, ...games];
 
 const featuredTeam = {
+  teamName: "ZeroPhase Prime",
   game: "VALORANT",
-  tag: "Tactical Shooter",
   players: [
     { ign: "ZP_Phantom", role: "Duelist" },
     { ign: "ZP_Smoke", role: "Controller" },
