@@ -186,14 +186,25 @@ const Index = () => {
                   <Users className="w-6 h-6 text-accent" />
                   <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
                 </div>
-                <div className="mb-2">
-                  <span className="text-2xl font-heading font-bold text-accent">
-                    {sponsorOfMonth.name}
-                  </span>
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src={sponsorOfMonth.logo}
+                    alt={`${sponsorOfMonth.name} logo`}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <span className="text-2xl font-heading font-bold text-accent block">
+                      {sponsorOfMonth.name}
+                    </span>
+                    <span className="text-xs text-muted-foreground uppercase tracking-widest">
+                      {sponsorOfMonth.tier}
+                    </span>
+                  </div>
                 </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-6">
-                  {sponsorOfMonth.tier}
-                </p>
+                <div className="text-sm text-muted-foreground mb-6">
+                  <span className="text-xs uppercase tracking-wider">Sponsors: </span>
+                  <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
+                </div>
                 <Link
                   to="/sponsors"
                   className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
