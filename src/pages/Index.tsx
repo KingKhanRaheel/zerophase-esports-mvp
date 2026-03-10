@@ -26,7 +26,12 @@ const featuredTeam = {
   ],
 };
 
-const sponsorOfMonth = { name: "TechCorp Gaming", tier: "Title Sponsor" };
+const sponsorOfMonth = {
+  name: "TechCorp Gaming",
+  logo: "https://ui-avatars.com/api/?name=TC&background=0f0f0f&color=00e5ff&size=80&bold=true",
+  tier: "Title Sponsor",
+  team: "Org",
+};
 
 const Index = () => {
   return (
