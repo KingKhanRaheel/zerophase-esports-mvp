@@ -1,0 +1,17 @@
+import Navbar from "@/components/Navbar";
+import SponsorsSection from "@/components/SponsorsSection";
+import Footer from "@/components/Footer";
+
+const Sponsors = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <div className="pt-20">
+        <SponsorsSection />
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Sponsors;
