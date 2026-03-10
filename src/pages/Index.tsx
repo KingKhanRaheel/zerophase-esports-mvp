@@ -141,10 +141,10 @@ const Index = () => {
               </div>
               <div className="mb-4">
                 <span className="text-2xl font-heading font-bold text-primary">
-                  {featuredTeam.game}
+                  {featuredTeam.teamName}
                 </span>
-                <span className="text-xs text-muted-foreground uppercase tracking-widest ml-3">
-                  {featuredTeam.tag}
+                <span className="text-sm text-muted-foreground ml-3">
+                  {featuredTeam.game}
                 </span>
               </div>
               <div className="space-y-2 mb-6">
