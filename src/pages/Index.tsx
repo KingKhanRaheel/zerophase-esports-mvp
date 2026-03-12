@@ -188,39 +188,39 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/30 hover:box-glow-cyan transition-all duration-300"
+              className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:box-glow-cyan transition-all duration-300"
             >
-              <img
-                src={bestPlayer.photo}
-                alt={bestPlayer.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Star className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-heading font-bold">PLAYER OF THE MONTH</h3>
-                </div>
-                <div className="mb-1">
-                  <span className="text-2xl font-heading font-bold text-primary">
+              <div className="flex items-center gap-3 mb-6">
+                <Star className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-heading font-bold">PLAYER OF THE MONTH</h3>
+              </div>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={bestPlayer.photo}
+                  alt={bestPlayer.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <span className="text-2xl font-heading font-bold text-primary block">
                     {bestPlayer.ign}
                   </span>
-                  <span className="text-sm text-muted-foreground ml-3">
+                  <span className="text-sm text-muted-foreground">
                     {bestPlayer.name}
                   </span>
                 </div>
-                <div className="space-y-2 mt-4">
-                  <div className="flex items-center justify-between py-1.5 border-b border-border/50">
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
-                    <span className="text-sm font-medium text-foreground">{bestPlayer.role}</span>
-                  </div>
-                  <div className="flex items-center justify-between py-1.5 border-b border-border/50">
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Team</span>
-                    <span className="text-sm font-medium text-foreground">{bestPlayer.team}</span>
-                  </div>
-                  <div className="flex items-center justify-between py-1.5">
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Game</span>
-                    <span className="text-sm font-medium text-foreground">{bestPlayer.game}</span>
-                  </div>
+              </div>
+              <div className="space-y-2 mt-4">
+                <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
+                  <span className="text-sm font-medium text-foreground">{bestPlayer.role}</span>
+                </div>
+                <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Team</span>
+                  <span className="text-sm font-medium text-foreground">{bestPlayer.team}</span>
+                </div>
+                <div className="flex items-center justify-between py-1.5">
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Game</span>
+                  <span className="text-sm font-medium text-foreground">{bestPlayer.game}</span>
                 </div>
               </div>
             </motion.div>
