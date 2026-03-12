@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Users, Trophy, ArrowRight } from "lucide-react";
+import { Users, Trophy, ArrowRight, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -31,6 +31,15 @@ const sponsorOfMonth = {
   logo: "https://ui-avatars.com/api/?name=TC&background=0f0f0f&color=00e5ff&size=80&bold=true",
   tier: "Title Sponsor",
   team: "Org",
+};
+
+const bestPlayer = {
+  name: "Rahul Sharma",
+  ign: "ZP_Phantom",
+  role: "Duelist",
+  team: "ZeroPhase Prime",
+  game: "VALORANT",
+  photo: "https://ui-avatars.com/api/?name=RS&background=0f0f0f&color=00e5ff&size=200&bold=true",
 };
 
 const Index = () => {
@@ -131,7 +140,7 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Featured Team */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -173,44 +182,85 @@ const Index = () => {
               </Link>
             </motion.div>
 
+            {/* Best Player of the Month */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/30 hover:box-glow-cyan transition-all duration-300"
+            >
+              <img
+                src={bestPlayer.photo}
+                alt={bestPlayer.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Star className="w-6 h-6 text-primary" />
+                  <h3 className="text-xl font-heading font-bold">PLAYER OF THE MONTH</h3>
+                </div>
+                <div className="mb-1">
+                  <span className="text-2xl font-heading font-bold text-primary">
+                    {bestPlayer.ign}
+                  </span>
+                  <span className="text-sm text-muted-foreground ml-3">
+                    {bestPlayer.name}
+                  </span>
+                </div>
+                <div className="space-y-2 mt-4">
+                  <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
+                    <span className="text-sm font-medium text-foreground">{bestPlayer.role}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Team</span>
+                    <span className="text-sm font-medium text-foreground">{bestPlayer.team}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5">
+                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Game</span>
+                    <span className="text-sm font-medium text-foreground">{bestPlayer.game}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Sponsor of the Month + Quick Links */}
             <div className="flex flex-col gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-card border border-border rounded-lg p-8 hover:border-accent/30 hover:box-glow-purple transition-all duration-300"
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent/30 hover:box-glow-purple transition-all duration-300"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <Users className="w-6 h-6 text-accent" />
-                  <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
-                </div>
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={sponsorOfMonth.logo}
-                    alt={`${sponsorOfMonth.name} logo`}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <span className="text-2xl font-heading font-bold text-accent block">
-                      {sponsorOfMonth.name}
-                    </span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-widest">
-                      {sponsorOfMonth.tier}
-                    </span>
+                <img
+                  src={sponsorOfMonth.logo}
+                  alt={`${sponsorOfMonth.name} logo`}
+                  className="w-full h-32 object-cover"
+                />
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="w-6 h-6 text-accent" />
+                    <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
                   </div>
+                  <span className="text-2xl font-heading font-bold text-accent block">
+                    {sponsorOfMonth.name}
+                  </span>
+                  <span className="text-xs text-muted-foreground uppercase tracking-widest">
+                    {sponsorOfMonth.tier}
+                  </span>
+                  <div className="text-sm text-muted-foreground mt-4 mb-6">
+                    <span className="text-xs uppercase tracking-wider">Sponsors: </span>
+                    <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
+                  </div>
+                  <Link
+                    to="/sponsors"
+                    className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
+                  >
+                    View all sponsors <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-                <div className="text-sm text-muted-foreground mb-6">
-                  <span className="text-xs uppercase tracking-wider">Sponsors: </span>
-                  <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
-                </div>
-                <Link
-                  to="/sponsors"
-                  className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
-                >
-                  View all sponsors <ArrowRight className="w-4 h-4" />
-                </Link>
               </motion.div>
 
               <motion.div

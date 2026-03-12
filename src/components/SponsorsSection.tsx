@@ -91,14 +91,14 @@ const SponsorsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`flex flex-col items-center p-8 rounded-lg border bg-card transition-all duration-300 ${tierColors[sponsor.tier]}`}
+              className={`flex flex-col items-center rounded-lg border bg-card overflow-hidden transition-all duration-300 ${tierColors[sponsor.tier]}`}
             >
               <img
                 src={sponsor.logo}
                 alt={`${sponsor.name} logo`}
-                className="w-16 h-16 rounded-full mb-4 object-cover"
+                className="w-full h-40 object-cover"
               />
-              <span className="font-heading font-bold text-lg text-center text-foreground">
+              <span className="font-heading font-bold text-lg text-center text-foreground px-8 pt-6">
                 {sponsor.name}
               </span>
               <span
@@ -106,7 +106,7 @@ const SponsorsSection = () => {
               >
                 {tierLabels[sponsor.tier]}
               </span>
-              <div className="mt-4 text-sm text-muted-foreground text-center">
+              <div className="mt-4 mb-6 text-sm text-muted-foreground text-center">
                 <span className="text-xs uppercase tracking-wider">Sponsors: </span>
                 <span className="font-medium text-foreground">
                   {sponsor.team}
