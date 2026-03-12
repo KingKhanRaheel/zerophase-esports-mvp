@@ -232,32 +232,35 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent/30 hover:box-glow-purple transition-all duration-300"
+                className="bg-card border border-border rounded-lg p-8 hover:border-accent/30 hover:box-glow-purple transition-all duration-300"
               >
-                <img
-                  src={sponsorOfMonth.logo}
-                  alt={`${sponsorOfMonth.name} logo`}
-                  className="w-full h-32 object-cover"
-                />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Users className="w-6 h-6 text-accent" />
-                    <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
+                <div className="flex items-center gap-3 mb-6">
+                  <Users className="w-6 h-6 text-accent" />
+                  <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
+                </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src={sponsorOfMonth.logo}
+                    alt={`${sponsorOfMonth.name} logo`}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <span className="text-2xl font-heading font-bold text-accent block">
+                      {sponsorOfMonth.name}
+                    </span>
+                    <span className="text-xs text-muted-foreground uppercase tracking-widest">
+                      {sponsorOfMonth.tier}
+                    </span>
                   </div>
-                  <span className="text-2xl font-heading font-bold text-accent block">
-                    {sponsorOfMonth.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground uppercase tracking-widest">
-                    {sponsorOfMonth.tier}
-                  </span>
-                  <div className="text-sm text-muted-foreground mt-4 mb-6">
-                    <span className="text-xs uppercase tracking-wider">Sponsors: </span>
-                    <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
-                  </div>
-                  <Link
-                    to="/sponsors"
-                    className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
-                  >
+                </div>
+                <div className="text-sm text-muted-foreground mb-6">
+                  <span className="text-xs uppercase tracking-wider">Sponsors: </span>
+                  <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
+                </div>
+                <Link
+                  to="/sponsors"
+                  className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
+                >
                     View all sponsors <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

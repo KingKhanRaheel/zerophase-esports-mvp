@@ -106,7 +106,7 @@ const SponsorsSection = () => {
               >
                 {tierLabels[sponsor.tier]}
               </span>
-              <div className="mt-4 mb-6 text-sm text-muted-foreground text-center">
+              <div className="mt-4 text-sm text-muted-foreground text-center">
                 <span className="text-xs uppercase tracking-wider">Sponsors: </span>
                 <span className="font-medium text-foreground">
                   {sponsor.team}
