@@ -261,9 +261,8 @@ const Index = () => {
                   to="/sponsors"
                   className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
                 >
-                    View all sponsors <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                  View all sponsors <ArrowRight className="w-4 h-4" />
+                </Link>
               </motion.div>
 
               <motion.div
