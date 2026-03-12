@@ -98,7 +98,7 @@ const SponsorsSection = () => {
                 alt={`${sponsor.name} logo`}
                 className="w-full h-40 object-cover"
               />
-              <span className="font-heading font-bold text-lg text-center text-foreground">
+              <span className="font-heading font-bold text-lg text-center text-foreground px-8 pt-6">
                 {sponsor.name}
               </span>
               <span
