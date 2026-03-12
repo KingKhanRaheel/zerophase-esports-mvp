@@ -33,6 +33,15 @@ const sponsorOfMonth = {
   team: "Org",
 };
 
+const bestPlayer = {
+  name: "Rahul Sharma",
+  ign: "ZP_Phantom",
+  role: "Duelist",
+  team: "ZeroPhase Prime",
+  game: "VALORANT",
+  photo: "https://ui-avatars.com/api/?name=RS&background=0f0f0f&color=00e5ff&size=200&bold=true",
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
