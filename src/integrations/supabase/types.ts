@@ -14,7 +14,224 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      announcements: {
+        Row: {
+          content: string | null
+          created_at: string
+          id: string
+          is_published: boolean
+          published_at: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          published_at?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          published_at?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      at_a_glance: {
+        Row: {
+          created_at: string
+          featured_team_id: string | null
+          id: string
+          player_of_month_id: string | null
+          sponsor_spotlight_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          featured_team_id?: string | null
+          id?: string
+          player_of_month_id?: string | null
+          sponsor_spotlight_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          featured_team_id?: string | null
+          id?: string
+          player_of_month_id?: string | null
+          sponsor_spotlight_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "at_a_glance_featured_team_id_fkey"
+            columns: ["featured_team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "at_a_glance_player_of_month_id_fkey"
+            columns: ["player_of_month_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "at_a_glance_sponsor_spotlight_id_fkey"
+            columns: ["sponsor_spotlight_id"]
+            isOneToOne: false
+            referencedRelation: "sponsors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      games: {
+        Row: {
+          created_at: string
+          display_order: number
+          id: string
+          image_url: string | null
+          name: string
+          tag: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          name: string
+          tag: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          name?: string
+          tag?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      players: {
+        Row: {
+          created_at: string
+          display_order: number
+          id: string
+          ign: string
+          name: string
+          photo_url: string | null
+          role: string
+          team_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          ign: string
+          name: string
+          photo_url?: string | null
+          role: string
+          team_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          ign?: string
+          name?: string
+          photo_url?: string | null
+          role?: string
+          team_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "players_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sponsors: {
+        Row: {
+          created_at: string
+          id: string
+          logo_url: string | null
+          name: string
+          team_description: string
+          tier: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          name: string
+          team_description?: string
+          tier?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          name?: string
+          team_description?: string
+          tier?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      teams: {
+        Row: {
+          created_at: string
+          game_id: string
+          id: string
+          is_active: boolean
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          game_id: string
+          id?: string
+          is_active?: boolean
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          game_id?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "teams_game_id_fkey"
+            columns: ["game_id"]
+            isOneToOne: false
+            referencedRelation: "games"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
