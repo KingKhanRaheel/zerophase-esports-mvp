@@ -4,45 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Users, Trophy, ArrowRight, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const games = [
-  { name: "BGMI", image: "/images/games/bgmi.jpg" },
-  { name: "FREE FIRE MAX", image: "/images/games/freefire.jpg" },
-  { name: "VALORANT", image: "/images/games/valorant.jpg" },
-  { name: "MLBB", image: "/images/games/mlbb.jpg" },
-];
-
-const duplicated = [...games, ...games, ...games, ...games];
-
-const featuredTeam = {
-  teamName: "ZeroPhase Prime",
-  game: "VALORANT",
-  players: [
-    { ign: "ZP_Phantom", role: "Duelist" },
-    { ign: "ZP_Smoke", role: "Controller" },
-    { ign: "ZP_Wall", role: "Sentinel" },
-    { ign: "ZP_Flash", role: "Initiator" },
-    { ign: "ZP_Flex", role: "Flex" },
-  ],
-};
-
-const sponsorOfMonth = {
-  name: "TechCorp Gaming",
-  logo: "https://ui-avatars.com/api/?name=TC&background=0f0f0f&color=00e5ff&size=80&bold=true",
-  tier: "Title Sponsor",
-  team: "Org",
-};
-
-const bestPlayer = {
-  name: "Rahul Sharma",
-  ign: "ZP_Phantom",
-  role: "Duelist",
-  team: "ZeroPhase Prime",
-  game: "VALORANT",
-  photo: "https://ui-avatars.com/api/?name=RS&background=0f0f0f&color=00e5ff&size=200&bold=true",
-};
+import { useGames } from "@/hooks/use-games";
+import { useAtAGlance } from "@/hooks/use-at-a-glance";
 
 const Index = () => {
+  const { data: games } = useGames();
+  const { data: glance } = useAtAGlance();
+
+  const gameCards = games?.map((g) => ({
+    name: g.name,
+    image: g.image_url || "/placeholder.svg",
+  })) || [
+    { name: "BGMI", image: "/images/games/bgmi.jpg" },
+    { name: "FREE FIRE MAX", image: "/images/games/freefire.jpg" },
+    { name: "VALORANT", image: "/images/games/valorant.jpg" },
+    { name: "MLBB", image: "/images/games/mlbb.jpg" },
+  ];
+
+  const duplicated = [...gameCards, ...gameCards, ...gameCards, ...gameCards];
+
+  // Featured team from DB
+  const featuredTeam = glance?.featuredTeam;
+  const playerOfMonth = glance?.playerOfMonth;
+  const sponsorSpotlight = glance?.sponsorSpotlight;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -153,27 +138,33 @@ const Index = () => {
                 <Trophy className="w-6 h-6 text-primary" />
                 <h3 className="text-xl font-heading font-bold">FEATURED ROSTER</h3>
               </div>
-              <div className="mb-4">
-                <span className="text-2xl font-heading font-bold text-primary">
-                  {featuredTeam.teamName}
-                </span>
-                <span className="text-sm text-muted-foreground ml-3">
-                  {featuredTeam.game}
-                </span>
-              </div>
-              <div className="space-y-2 mb-6">
-                {featuredTeam.players.map((p) => (
-                  <div
-                    key={p.ign}
-                    className="flex items-center justify-between py-1.5 border-b border-border/50 last:border-0"
-                  >
-                    <span className="text-sm font-medium text-foreground">{p.ign}</span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-3 py-1 rounded-full">
-                      {p.role}
+              {featuredTeam ? (
+                <>
+                  <div className="mb-4">
+                    <span className="text-2xl font-heading font-bold text-primary">
+                      {featuredTeam.name}
+                    </span>
+                    <span className="text-sm text-muted-foreground ml-3">
+                      {(featuredTeam as any).games?.name}
                     </span>
                   </div>
-                ))}
-              </div>
+                  <div className="space-y-2 mb-6">
+                    {((featuredTeam as any).players || []).map((p: any) => (
+                      <div
+                        key={p.id}
+                        className="flex items-center justify-between py-1.5 border-b border-border/50 last:border-0"
+                      >
+                        <span className="text-sm font-medium text-foreground">{p.ign}</span>
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-3 py-1 rounded-full">
+                          {p.role}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm text-muted-foreground italic">No featured team set.</p>
+              )}
               <Link
                 to="/teams"
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
@@ -194,35 +185,48 @@ const Index = () => {
                 <Star className="w-6 h-6 text-primary" />
                 <h3 className="text-xl font-heading font-bold">PLAYER OF THE MONTH</h3>
               </div>
-              <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={bestPlayer.photo}
-                  alt={bestPlayer.name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <span className="text-2xl font-heading font-bold text-primary block">
-                    {bestPlayer.ign}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {bestPlayer.name}
-                  </span>
-                </div>
-              </div>
-              <div className="space-y-2 mt-4">
-                <div className="flex items-center justify-between py-1.5 border-b border-border/50">
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
-                  <span className="text-sm font-medium text-foreground">{bestPlayer.role}</span>
-                </div>
-                <div className="flex items-center justify-between py-1.5 border-b border-border/50">
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Team</span>
-                  <span className="text-sm font-medium text-foreground">{bestPlayer.team}</span>
-                </div>
-                <div className="flex items-center justify-between py-1.5">
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Game</span>
-                  <span className="text-sm font-medium text-foreground">{bestPlayer.game}</span>
-                </div>
-              </div>
+              {playerOfMonth ? (
+                <>
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={
+                        playerOfMonth.photo_url ||
+                        `https://ui-avatars.com/api/?name=${encodeURIComponent(playerOfMonth.name)}&background=0f0f0f&color=00e5ff&size=200&bold=true`
+                      }
+                      alt={playerOfMonth.name}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <span className="text-2xl font-heading font-bold text-primary block">
+                        {playerOfMonth.ign}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {playerOfMonth.name}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 mt-4">
+                    <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
+                      <span className="text-sm font-medium text-foreground">{playerOfMonth.role}</span>
+                    </div>
+                    <div className="flex items-center justify-between py-1.5 border-b border-border/50">
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Team</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {(playerOfMonth as any).teams?.name}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between py-1.5">
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Game</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {(playerOfMonth as any).teams?.games?.name}
+                      </span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm text-muted-foreground italic">No player of the month set.</p>
+              )}
             </motion.div>
 
             {/* Sponsor of the Month + Quick Links */}
@@ -238,25 +242,34 @@ const Index = () => {
                   <Users className="w-6 h-6 text-accent" />
                   <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
                 </div>
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={sponsorOfMonth.logo}
-                    alt={`${sponsorOfMonth.name} logo`}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <span className="text-2xl font-heading font-bold text-accent block">
-                      {sponsorOfMonth.name}
-                    </span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-widest">
-                      {sponsorOfMonth.tier}
-                    </span>
-                  </div>
-                </div>
-                <div className="text-sm text-muted-foreground mb-6">
-                  <span className="text-xs uppercase tracking-wider">Sponsors: </span>
-                  <span className="font-medium text-foreground">{sponsorOfMonth.team}</span>
-                </div>
+                {sponsorSpotlight ? (
+                  <>
+                    <div className="flex items-center gap-4 mb-4">
+                      <img
+                        src={
+                          sponsorSpotlight.logo_url ||
+                          `https://ui-avatars.com/api/?name=${encodeURIComponent(sponsorSpotlight.name)}&background=0f0f0f&color=00e5ff&size=80&bold=true`
+                        }
+                        alt={`${sponsorSpotlight.name} logo`}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <span className="text-2xl font-heading font-bold text-accent block">
+                          {sponsorSpotlight.name}
+                        </span>
+                        <span className="text-xs text-muted-foreground uppercase tracking-widest">
+                          {sponsorSpotlight.tier}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-6">
+                      <span className="text-xs uppercase tracking-wider">Sponsors: </span>
+                      <span className="font-medium text-foreground">{sponsorSpotlight.team_description}</span>
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-sm text-muted-foreground italic mb-6">No sponsor spotlight set.</p>
+                )}
                 <Link
                   to="/sponsors"
                   className="inline-flex items-center gap-2 text-sm text-accent hover:underline font-medium"
