@@ -32,19 +32,19 @@ const SponsorsSection = () => {
   const { data: sponsors, isLoading, error } = useSponsors();
 
   return (
-    <section id="sponsors" className="py-24 md:py-32 relative">
-      <div className="container mx-auto px-4">
+    <section id="sponsors" className="py-16 sm:py-24 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-3 sm:mb-4">
             PARTNERS & <span className="text-primary">SPONSORS</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
             Backed by organizations that believe in the future of Indian esports.
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ const SponsorsSection = () => {
           <p className="text-center text-muted-foreground">No sponsors yet.</p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {sponsors?.map((sponsor, i) => {
             const tierKey = sponsor.tier?.toLowerCase() || "supporter";
             return (
@@ -71,7 +71,7 @@ const SponsorsSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`game-card border-shimmer flex flex-col items-center p-8 rounded-lg border bg-card transition-all duration-300 ${tierColors[tierKey] || tierColors.supporter}`}
+                className={`game-card border-shimmer flex flex-col items-center p-5 sm:p-8 rounded-lg border bg-card transition-all duration-300 ${tierColors[tierKey] || tierColors.supporter}`}
               >
                 <img
                   src={
@@ -79,9 +79,9 @@ const SponsorsSection = () => {
                     `https://ui-avatars.com/api/?name=${encodeURIComponent(sponsor.name)}&background=0f0f0f&color=00e5ff&size=80&bold=true`
                   }
                   alt={`${sponsor.name} logo`}
-                  className="w-16 h-16 rounded-full mb-4 object-cover"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-3 sm:mb-4 object-cover"
                 />
-                <span className="font-heading font-bold text-lg text-center text-foreground">
+                <span className="font-heading font-bold text-base sm:text-lg text-center text-foreground">
                   {sponsor.name}
                 </span>
                 <span
@@ -89,7 +89,7 @@ const SponsorsSection = () => {
                 >
                   {tierLabels[sponsor.tier] || sponsor.tier}
                 </span>
-                <div className="mt-4 text-sm text-muted-foreground text-center">
+                <div className="mt-3 sm:mt-4 text-sm text-muted-foreground text-center">
                   <span className="text-xs uppercase tracking-wider">Sponsors: </span>
                   <span className="font-medium text-foreground">
                     {sponsor.team_description}
@@ -105,7 +105,7 @@ const SponsorsSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12"
         >
           <p className="text-muted-foreground mb-4">Interested in partnering with ZeroPhase?</p>
           <a
