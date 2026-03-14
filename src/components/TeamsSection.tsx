@@ -51,7 +51,7 @@ const TeamsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-3xl font-heading font-bold text-primary">
+                <h3 className="text-3xl font-heading font-bold text-primary text-glow-cyan">
                   {section.game}
                 </h3>
                 <span className="text-xs text-muted-foreground uppercase tracking-widest mt-1">
