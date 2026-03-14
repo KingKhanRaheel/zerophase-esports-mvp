@@ -41,7 +41,7 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MessageSquare className="w-5 h-5 text-primary mt-1 shrink-0" />
+              <MessageSquare className="w-5 h-5 text-primary mt-1 shrink-0 icon-glow" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Discord</h4>
                 <p className="text-muted-foreground text-sm">discord.gg/zerophase</p>
