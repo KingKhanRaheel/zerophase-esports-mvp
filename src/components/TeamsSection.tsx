@@ -12,19 +12,19 @@ const TeamsSection = () => {
   const { data: sections, isLoading, error } = useTeamsWithPlayers();
 
   return (
-    <section id="teams" className="py-24 md:py-32 bg-muted/30 relative">
-      <div className="container mx-auto px-4">
+    <section id="teams" className="py-16 sm:py-24 md:py-32 bg-muted/30 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-3 sm:mb-4">
             OUR <span className="text-primary">TEAMS</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
             Active rosters across India's biggest competitive titles.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ const TeamsSection = () => {
           <p className="text-center text-muted-foreground">No active teams found.</p>
         )}
 
-        <div className="max-w-4xl mx-auto space-y-10">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10">
           {sections?.map((section, i) => (
             <motion.div
               key={section.game}
@@ -50,8 +50,8 @@ const TeamsSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-3xl font-heading font-bold text-primary text-glow-cyan">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-primary text-glow-cyan">
                   {section.game}
                 </h3>
                 <span className="text-xs text-muted-foreground uppercase tracking-widest mt-1">
@@ -59,17 +59,17 @@ const TeamsSection = () => {
                 </span>
               </div>
 
-              <Accordion type="multiple" className="space-y-3">
+              <Accordion type="multiple" className="space-y-2 sm:space-y-3">
                 {section.lineups.map((lineup) => (
                   <AccordionItem
                     key={lineup.id}
                     value={lineup.id}
                     className="game-card bg-card border border-border rounded-lg overflow-hidden hover:border-primary/20 transition-all duration-300 px-0"
                   >
-                    <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                      <div className="flex items-center gap-3">
-                        <Users className="w-5 h-5 text-muted-foreground/50 icon-glow" />
-                        <span className="text-lg font-heading font-semibold text-foreground">
+                    <AccordionTrigger className="px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <Users className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/50 icon-glow" />
+                        <span className="text-base sm:text-lg font-heading font-semibold text-foreground">
                           {lineup.name}
                         </span>
                         <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
@@ -77,7 +77,7 @@ const TeamsSection = () => {
                         </span>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4">
+                    <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4">
                       <div className="space-y-2 pt-2">
                         {lineup.players.length === 0 && (
                           <p className="text-sm text-muted-foreground italic">No players added yet.</p>
@@ -90,7 +90,7 @@ const TeamsSection = () => {
                             <span className="text-sm font-medium text-foreground">
                               {player.ign}
                             </span>
-                            <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-3 py-1 rounded-full">
+                            <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-2 sm:px-3 py-1 rounded-full">
                               {player.role}
                             </span>
                           </div>

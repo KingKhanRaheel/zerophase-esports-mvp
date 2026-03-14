@@ -29,16 +29,16 @@ const Navbar = () => {
         scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="ZeroPhase Esports" className="w-10 h-10 rounded-lg" />
-          <span className="font-heading text-xl font-bold tracking-wider text-primary text-glow-cyan">
+      <div className="container mx-auto flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          <img src={logo} alt="ZeroPhase Esports" className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg" />
+          <span className="font-heading text-lg sm:text-xl font-bold tracking-wider text-primary text-glow-cyan">
             ZEROPHASE
           </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -56,10 +56,10 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -72,13 +72,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-md border-b border-border"
           >
-            <div className="flex flex-col gap-4 p-6">
+            <div className="flex flex-col gap-3 p-4 sm:p-6">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-left text-sm font-medium transition-colors uppercase tracking-widest ${
+                  className={`text-left text-sm font-medium transition-colors uppercase tracking-widest py-1 ${
                     location.pathname === item.href
                       ? "text-primary"
                       : "text-muted-foreground hover:text-primary"
