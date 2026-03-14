@@ -71,7 +71,7 @@ const ContactSection = () => {
             <Input
               type="email"
               placeholder="Your Email"
-              className="bg-card border-border focus:border-primary" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow" />
 
             <Input
               placeholder="Subject"
