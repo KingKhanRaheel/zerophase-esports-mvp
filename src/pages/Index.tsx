@@ -53,7 +53,7 @@ const Index = () => {
               <br />
               <span className="text-foreground">THE FALL.</span>
               <br />
-              <span className="gradient-text">ZEROPHASE!</span>
+              <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
