@@ -48,7 +48,7 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
+              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0 icon-glow" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Location</h4>
                 <p className="text-muted-foreground text-sm">India</p>
