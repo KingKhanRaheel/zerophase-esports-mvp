@@ -71,7 +71,7 @@ const SponsorsSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`flex flex-col items-center p-8 rounded-lg border bg-card transition-all duration-300 ${tierColors[tierKey] || tierColors.supporter}`}
+                className={`game-card border-shimmer flex flex-col items-center p-8 rounded-lg border bg-card transition-all duration-300 ${tierColors[tierKey] || tierColors.supporter}`}
               >
                 <img
                   src={

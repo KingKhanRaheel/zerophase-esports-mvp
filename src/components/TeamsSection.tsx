@@ -64,11 +64,11 @@ const TeamsSection = () => {
                   <AccordionItem
                     key={lineup.id}
                     value={lineup.id}
-                    className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/20 transition-all duration-300 px-0"
+                    className="game-card bg-card border border-border rounded-lg overflow-hidden hover:border-primary/20 transition-all duration-300 px-0"
                   >
                     <AccordionTrigger className="px-6 py-4 hover:no-underline">
                       <div className="flex items-center gap-3">
-                        <Users className="w-5 h-5 text-muted-foreground/50" />
+                        <Users className="w-5 h-5 text-muted-foreground/50 icon-glow" />
                         <span className="text-lg font-heading font-semibold text-foreground">
                           {lineup.name}
                         </span>

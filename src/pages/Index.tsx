@@ -240,7 +240,7 @@ const Index = () => {
                 className="game-card game-card-purple bg-card border border-border rounded-lg p-8 hover:border-accent/30 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <Users className="w-6 h-6 text-accent" />
+                  <Users className="w-6 h-6 text-accent icon-glow-purple" />
                   <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
                 </div>
                 {sponsorSpotlight ? (

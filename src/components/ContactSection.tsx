@@ -80,7 +80,7 @@ const ContactSection = () => {
             <Textarea
               placeholder="Your Message"
               rows={5}
-              className="bg-card border-border focus:border-primary resize-none" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow resize-none" />
 
             <Button
               type="submit"
