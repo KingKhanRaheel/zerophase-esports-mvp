@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="ZeroPhase Esports" className="w-10 h-10 rounded-lg" />
-          <span className="font-heading text-xl font-bold tracking-wider text-primary">
+          <span className="font-heading text-xl font-bold tracking-wider text-primary text-glow-cyan">
             ZEROPHASE
           </span>
         </Link>
