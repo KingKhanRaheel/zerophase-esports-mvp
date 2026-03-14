@@ -136,7 +136,7 @@ const Index = () => {
               className="game-card bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
-                <Trophy className="w-6 h-6 text-primary" />
+                <Trophy className="w-6 h-6 text-primary icon-glow" />
                 <h3 className="text-xl font-heading font-bold">FEATURED ROSTER</h3>
               </div>
               {featuredTeam ? (
