@@ -33,7 +33,7 @@ const ContactSection = () => {
             className="space-y-8">
 
             <div className="flex items-start gap-4">
-              <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
+              <Mail className="w-5 h-5 text-primary mt-1 shrink-0 icon-glow" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Email</h4>
                 <p className="text-muted-foreground text-sm">zerophaseesports@gmail.com
@@ -41,14 +41,14 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MessageSquare className="w-5 h-5 text-primary mt-1 shrink-0" />
+              <MessageSquare className="w-5 h-5 text-primary mt-1 shrink-0 icon-glow" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Discord</h4>
                 <p className="text-muted-foreground text-sm">discord.gg/zerophase</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
+              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0 icon-glow" />
               <div>
                 <h4 className="font-heading font-semibold mb-1">Location</h4>
                 <p className="text-muted-foreground text-sm">India</p>
@@ -66,21 +66,21 @@ const ContactSection = () => {
 
             <Input
               placeholder="Your Name"
-              className="bg-card border-border focus:border-primary" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow" />
 
             <Input
               type="email"
               placeholder="Your Email"
-              className="bg-card border-border focus:border-primary" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow" />
 
             <Input
               placeholder="Subject"
-              className="bg-card border-border focus:border-primary" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow" />
 
             <Textarea
               placeholder="Your Message"
               rows={5}
-              className="bg-card border-border focus:border-primary resize-none" />
+              className="bg-card border-border focus:border-primary focus:shadow-[0_0_12px_hsl(170,100%,50%,0.15)] transition-shadow resize-none" />
 
             <Button
               type="submit"

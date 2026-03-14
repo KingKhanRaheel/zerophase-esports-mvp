@@ -35,7 +35,8 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute inset-0 scanlines" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] will-change-transform" />
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px]" />
 
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -52,7 +53,7 @@ const Index = () => {
               <br />
               <span className="text-foreground">THE FALL.</span>
               <br />
-              <span className="gradient-text">ZEROPHASE!</span>
+              <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
@@ -132,10 +133,10 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:box-glow-cyan transition-all duration-300"
+              className="game-card bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
-                <Trophy className="w-6 h-6 text-primary" />
+                <Trophy className="w-6 h-6 text-primary icon-glow" />
                 <h3 className="text-xl font-heading font-bold">FEATURED ROSTER</h3>
               </div>
               {featuredTeam ? (
@@ -179,10 +180,10 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:box-glow-cyan transition-all duration-300"
+              className="game-card bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
-                <Star className="w-6 h-6 text-primary" />
+                <Star className="w-6 h-6 text-primary icon-glow" />
                 <h3 className="text-xl font-heading font-bold">PLAYER OF THE MONTH</h3>
               </div>
               {playerOfMonth ? (
@@ -236,10 +237,10 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-card border border-border rounded-lg p-8 hover:border-accent/30 hover:box-glow-purple transition-all duration-300"
+                className="game-card game-card-purple bg-card border border-border rounded-lg p-8 hover:border-accent/30 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <Users className="w-6 h-6 text-accent" />
+                  <Users className="w-6 h-6 text-accent icon-glow-purple" />
                   <h3 className="text-xl font-heading font-bold">SPONSOR SPOTLIGHT</h3>
                 </div>
                 {sponsorSpotlight ? (

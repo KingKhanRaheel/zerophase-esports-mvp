@@ -51,7 +51,7 @@ const TeamsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-3xl font-heading font-bold text-primary">
+                <h3 className="text-3xl font-heading font-bold text-primary text-glow-cyan">
                   {section.game}
                 </h3>
                 <span className="text-xs text-muted-foreground uppercase tracking-widest mt-1">
@@ -64,11 +64,11 @@ const TeamsSection = () => {
                   <AccordionItem
                     key={lineup.id}
                     value={lineup.id}
-                    className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/20 transition-all duration-300 px-0"
+                    className="game-card bg-card border border-border rounded-lg overflow-hidden hover:border-primary/20 transition-all duration-300 px-0"
                   >
                     <AccordionTrigger className="px-6 py-4 hover:no-underline">
                       <div className="flex items-center gap-3">
-                        <Users className="w-5 h-5 text-muted-foreground/50" />
+                        <Users className="w-5 h-5 text-muted-foreground/50 icon-glow" />
                         <span className="text-lg font-heading font-semibold text-foreground">
                           {lineup.name}
                         </span>

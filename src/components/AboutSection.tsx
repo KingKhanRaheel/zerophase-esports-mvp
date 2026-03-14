@@ -50,9 +50,9 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:box-glow-cyan transition-all duration-300 group"
+              className="game-card bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-all duration-300 group"
             >
-              <pillar.icon className="w-10 h-10 text-primary mb-5 group-hover:drop-shadow-[0_0_8px_hsl(170,100%,50%,0.5)] transition-all" />
+              <pillar.icon className="w-10 h-10 text-primary mb-5 icon-glow transition-all" />
               <h3 className="text-xl font-heading font-bold mb-3">{pillar.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {pillar.description}

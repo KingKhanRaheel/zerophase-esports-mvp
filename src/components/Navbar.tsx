@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="ZeroPhase Esports" className="w-10 h-10 rounded-lg" />
-          <span className="font-heading text-xl font-bold tracking-wider text-primary">
+          <span className="font-heading text-xl font-bold tracking-wider text-primary text-glow-cyan">
             ZEROPHASE
           </span>
         </Link>
@@ -43,9 +43,9 @@ const Navbar = () => {
             <Link
               key={item.label}
               to={item.href}
-              className={`text-sm font-medium transition-colors duration-200 uppercase tracking-widest ${
+              className={`text-sm font-medium transition-all duration-300 uppercase tracking-widest ${
                 location.pathname === item.href
-                  ? "text-primary"
+                  ? "text-primary text-glow-cyan"
                   : "text-muted-foreground hover:text-primary"
               }`}
             >

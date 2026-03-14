@@ -95,6 +95,67 @@
   .border-glow {
     border-color: hsl(170 100% 50% / 0.3);
   }
+
+  /* Gaming card with glow on hover — GPU-accelerated */
+  .game-card {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  .game-card::before {
+    content: "";
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500 pointer-events-none;
+    box-shadow: inset 0 0 30px hsl(170 100% 50% / 0.08), 0 0 20px hsl(170 100% 50% / 0.1);
+  }
+  .game-card:hover::before {
+    opacity: 1;
+  }
+
+  .game-card-purple::before {
+    box-shadow: inset 0 0 30px hsl(265 80% 60% / 0.08), 0 0 20px hsl(265 80% 60% / 0.1);
+  }
+
+  /* Subtle animated scanline overlay for hero */
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(170 100% 50% / 0.015) 2px,
+      hsl(170 100% 50% / 0.015) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Glow pulse for icons */
+  .icon-glow {
+    filter: drop-shadow(0 0 4px hsl(170 100% 50% / 0.3));
+    transition: filter 0.3s ease;
+  }
+  .icon-glow:hover,
+  .group:hover .icon-glow {
+    filter: drop-shadow(0 0 10px hsl(170 100% 50% / 0.6));
+  }
+
+  .icon-glow-purple {
+    filter: drop-shadow(0 0 4px hsl(265 80% 60% / 0.3));
+    transition: filter 0.3s ease;
+  }
+  .icon-glow-purple:hover,
+  .group:hover .icon-glow-purple {
+    filter: drop-shadow(0 0 10px hsl(265 80% 60% / 0.6));
+  }
+
+  /* Gradient border shimmer */
+  .border-shimmer {
+    position: relative;
+  }
+  .border-shimmer::after {
+    content: "";
+    @apply absolute inset-0 rounded-lg pointer-events-none opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(170 100% 50% / 0.1), transparent 40%, hsl(265 80% 60% / 0.1));
+  }
+  .border-shimmer:hover::after {
+    opacity: 1;
+  }
 }
 
 /* Scrollbar */
