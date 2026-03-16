@@ -44,7 +44,7 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[0.95] mb-4 sm:mb-6">
+            <h1 className="font-heading font-bold leading-[0.95] mb-4 sm:mb-6 text-[clamp(2.75rem,10vw,5.5rem)]">
               <span className="text-foreground">THE GRIND.</span>
               <br />
               <span className="text-foreground">THE RISE.</span>
