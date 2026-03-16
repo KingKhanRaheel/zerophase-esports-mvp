@@ -60,13 +60,15 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button
-                size="lg"
-                className="gradient-primary text-primary-foreground font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 hover:opacity-90 transition-opacity"
-              >
-                JOIN COMMUNITY
-              </Button>
-              <Link to="/contact">
+              <a href="https://discord.gg/JCwDJDA9Kz" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="gradient-primary text-primary-foreground font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 hover:opacity-90 transition-opacity w-full"
+                >
+                  JOIN COMMUNITY
+                </Button>
+              </a>
+              <a href="https://forms.gle/Ubgu3Pb5aKQtNh6s5" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
@@ -74,7 +76,7 @@ const Index = () => {
                 >
                   PARTNER WITH US
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
