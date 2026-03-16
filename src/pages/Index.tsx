@@ -44,11 +44,19 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-heading font-bold leading-[1.05] mb-4 sm:mb-6 tracking-tight flex flex-wrap justify-center gap-x-[0.3em]">
-              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)]">THE GRIND.</span>
-              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)]">THE RISE.</span>
-              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)] basis-full sm:basis-auto">THE FALL.</span>
-              <span className="gradient-text text-glow-cyan text-[clamp(2.5rem,11vw,5.5rem)] basis-full">ZEROPHASE!</span>
+            <h1 className="font-heading font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight text-[clamp(2.5rem,11vw,5.5rem)] text-center">
+              <span className="hidden md:block">
+                <span className="text-foreground">THE GRIND.</span>{" "}
+                <span className="text-foreground">THE RISE.</span>
+              </span>
+              <span className="hidden md:block">
+                <span className="text-foreground">THE FALL.</span>{" "}
+                <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
+              </span>
+              <span className="md:hidden block text-foreground">THE GRIND.</span>
+              <span className="md:hidden block text-foreground">THE RISE.</span>
+              <span className="md:hidden block text-foreground">THE FALL.</span>
+              <span className="md:hidden block gradient-text text-glow-cyan">ZEROPHASE!</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 font-light px-2">
