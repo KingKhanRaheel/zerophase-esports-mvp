@@ -38,13 +38,13 @@ const Index = () => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-primary/5 blur-[120px] will-change-transform" />
         <div className="absolute top-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-accent/5 blur-[100px]" />
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pt-16 sm:pt-0 px-2">
+        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pt-20 px-2">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-heading font-bold leading-[1] mb-4 sm:mb-6 text-[clamp(3.5rem,14vw,6rem)] sm:text-[clamp(3rem,8vw,5.5rem)] tracking-tight">
+            <h1 className="font-heading font-bold leading-[0.95] mb-4 sm:mb-6 text-[clamp(2.5rem,10vw,7rem)] tracking-tight">
               <span className="text-foreground">THE GRIND.</span>
               <br />
               <span className="text-foreground">THE RISE.</span>
