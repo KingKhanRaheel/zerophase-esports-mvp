@@ -32,26 +32,23 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-20">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted" />
         <div className="absolute inset-0 scanlines" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-primary/5 blur-[120px] will-change-transform" />
         <div className="absolute top-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-accent/5 blur-[100px]" />
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto text-center pt-20 px-2">
+        <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-2">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-heading font-bold leading-[0.95] mb-4 sm:mb-6 text-[clamp(2.5rem,10vw,7rem)] tracking-tight">
-              <span className="text-foreground">THE GRIND.</span>
-              <br />
-              <span className="text-foreground">THE RISE.</span>
-              <br />
-              <span className="text-foreground">THE FALL.</span>
-              <br />
-              <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
+            <h1 className="font-heading font-bold leading-[1.05] mb-4 sm:mb-6 tracking-tight flex flex-wrap justify-center gap-x-[0.3em]">
+              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)]">THE GRIND.</span>
+              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)]">THE RISE.</span>
+              <span className="text-foreground text-[clamp(2.5rem,11vw,5.5rem)] basis-full sm:basis-auto">THE FALL.</span>
+              <span className="gradient-text text-glow-cyan text-[clamp(2.5rem,11vw,5.5rem)] basis-full">ZEROPHASE!</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 font-light px-2">
