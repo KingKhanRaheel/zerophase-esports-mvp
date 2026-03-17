@@ -13,7 +13,8 @@ const pairedLines = [
 ] as const;
 
 const headlineSizeClass = "text-[clamp(2.35rem,8vw,5.5rem)] leading-[0.96]";
-const pairedLineClass = "flex items-center justify-center gap-x-[0.32em] whitespace-nowrap";
+const accentSizeClass = "text-[clamp(2.8rem,9.5vw,6.5rem)] leading-[0.96]";
+const pairedLineClass = "flex items-baseline justify-center gap-x-[0.32em] whitespace-nowrap";
 
 const HeroHeadline = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +71,7 @@ const HeroHeadline = () => {
             {line.map((phrase) => (
               <span
                 key={phrase.text}
-                className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
               >
                 {phrase.text}
               </span>
@@ -79,7 +80,7 @@ const HeroHeadline = () => {
         ))}
       </div>
 
-      <h1 className={`mb-4 sm:mb-6 text-center font-heading font-bold tracking-tight ${headlineSizeClass}`}>
+      <h1 className="mb-4 sm:mb-6 text-center font-heading font-bold tracking-tight">
         {usePairedLayout ? (
           <span className="flex flex-col items-center">
             {pairedLines.map((line, lineIndex) => (
@@ -87,7 +88,7 @@ const HeroHeadline = () => {
                 {line.map((phrase) => (
                   <span
                     key={phrase.text}
-                    className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                    className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
                   >
                     {phrase.text}
                   </span>
@@ -100,7 +101,7 @@ const HeroHeadline = () => {
             {stackedPhrases.map((phrase) => (
               <span
                 key={phrase.text}
-                className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
               >
                 {phrase.text}
               </span>
