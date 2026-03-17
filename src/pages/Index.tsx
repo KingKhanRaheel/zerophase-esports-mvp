@@ -40,7 +40,7 @@ const Index = () => {
         <div className="absolute top-1/3 right-1/4 h-[250px] w-[250px] rounded-full bg-accent/5 blur-[100px] md:h-[400px] md:w-[400px]" />
 
         <div className="relative z-10 flex min-h-[calc(100svh-var(--navbar-height,4rem)-8rem)] items-center">
-          <div className="w-full max-w-5xl mx-auto text-center px-2">
+          <div className="mx-auto w-full max-w-5xl px-2 text-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,31 +48,32 @@ const Index = () => {
             >
               <HeroHeadline />
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 font-light px-2">
-              India's next-generation esports organization — built on discipline,
-              structure, and the relentless pursuit of competitive excellence.
-            </p>
+              <p className="mx-auto mb-6 max-w-2xl px-2 text-base font-light text-muted-foreground sm:mb-10 sm:text-lg md:text-xl">
+                India's next-generation esports organization — built on discipline,
+                structure, and the relentless pursuit of competitive excellence.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <a href="https://discord.gg/JCwDJDA9Kz" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  className="gradient-primary text-primary-foreground font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 hover:opacity-90 transition-opacity w-full"
-                >
-                  JOIN COMMUNITY
-                </Button>
-              </a>
-              <a href="https://forms.gle/Ubgu3Pb5aKQtNh6s5" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary/30 text-primary hover:bg-primary/10 font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 w-full"
-                >
-                  PARTNER WITH US
-                </Button>
-              </a>
-            </div>
-          </motion.div>
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+                <a href="https://discord.gg/JCwDJDA9Kz" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="gradient-primary w-full px-6 font-heading text-base font-semibold tracking-wider text-primary-foreground transition-opacity hover:opacity-90 sm:px-8 sm:text-lg"
+                  >
+                    JOIN COMMUNITY
+                  </Button>
+                </a>
+                <a href="https://forms.gle/Ubgu3Pb5aKQtNh6s5" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/30 px-6 font-heading text-base font-semibold tracking-wider text-primary hover:bg-primary/10 sm:px-8 sm:text-lg"
+                  >
+                    PARTNER WITH US
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Rolling game strip */}
