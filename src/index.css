@@ -158,6 +158,11 @@
   }
 }
 
+#lovable-badge {
+    display: none !important;
+}
+
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
