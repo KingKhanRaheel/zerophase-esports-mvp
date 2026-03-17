@@ -29,7 +29,7 @@ const Navbar = () => {
         scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6">
+      <div className="w-full flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img src={logo} alt="ZeroPhase Esports" className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg" />
           <span className="font-heading text-lg sm:text-xl font-bold tracking-wider text-primary text-glow-cyan">
