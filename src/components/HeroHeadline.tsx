@@ -13,7 +13,8 @@ const pairedLines = [
 ] as const;
 
 const headlineSizeClass = "text-[clamp(2.35rem,8vw,5.5rem)] leading-[0.96]";
-const pairedLineClass = "flex items-center justify-center gap-x-[0.32em] whitespace-nowrap";
+const accentSizeClass = "text-[clamp(2.8rem,9.5vw,6.5rem)] leading-[0.96]";
+const pairedLineClass = "flex items-baseline justify-center gap-x-[0.32em] whitespace-nowrap";
 
 const HeroHeadline = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
