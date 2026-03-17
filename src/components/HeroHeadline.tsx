@@ -80,7 +80,7 @@ const HeroHeadline = () => {
         ))}
       </div>
 
-      <h1 className={`mb-4 sm:mb-6 text-center font-heading font-bold tracking-tight ${headlineSizeClass}`}>
+      <h1 className="mb-4 sm:mb-6 text-center font-heading font-bold tracking-tight">
         {usePairedLayout ? (
           <span className="flex flex-col items-center">
             {pairedLines.map((line, lineIndex) => (
@@ -88,7 +88,7 @@ const HeroHeadline = () => {
                 {line.map((phrase) => (
                   <span
                     key={phrase.text}
-                    className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                    className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
                   >
                     {phrase.text}
                   </span>
@@ -101,7 +101,7 @@ const HeroHeadline = () => {
             {stackedPhrases.map((phrase) => (
               <span
                 key={phrase.text}
-                className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
               >
                 {phrase.text}
               </span>
