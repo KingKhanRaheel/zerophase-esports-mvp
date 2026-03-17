@@ -33,32 +33,20 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-20">
+      <section className="relative min-h-screen overflow-hidden px-4 pt-[calc(var(--navbar-height,4rem)+1rem)]">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted" />
         <div className="absolute inset-0 scanlines" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-primary/5 blur-[120px] will-change-transform" />
-        <div className="absolute top-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-accent/5 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px] will-change-transform md:h-[600px] md:w-[600px]" />
+        <div className="absolute top-1/3 right-1/4 h-[250px] w-[250px] rounded-full bg-accent/5 blur-[100px] md:h-[400px] md:w-[400px]" />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-2">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="font-heading font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight text-[clamp(2.5rem,11vw,5.5rem)] text-center">
-              <span className="hidden md:block">
-                <span className="text-foreground">THE GRIND.</span>{" "}
-                <span className="text-foreground">THE RISE.</span>
-              </span>
-              <span className="hidden md:block">
-                <span className="text-foreground">THE FALL.</span>{" "}
-                <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
-              </span>
-              <span className="md:hidden block text-foreground">THE GRIND.</span>
-              <span className="md:hidden block text-foreground">THE RISE.</span>
-              <span className="md:hidden block text-foreground">THE FALL.</span>
-              <span className="md:hidden block gradient-text text-glow-cyan">ZEROPHASE!</span>
-            </h1>
+        <div className="relative z-10 flex min-h-[calc(100svh-var(--navbar-height,4rem)-8rem)] items-center">
+          <div className="w-full max-w-5xl mx-auto text-center px-2">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <HeroHeadline />
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 font-light px-2">
               India's next-generation esports organization — built on discipline,
