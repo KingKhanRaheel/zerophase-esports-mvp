@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Trophy, ArrowRight, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroHeadline from "@/components/HeroHeadline";
 import { useGames } from "@/hooks/use-games";
 import { useAtAGlance } from "@/hooks/use-at-a-glance";
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -15,6 +15,7 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,13 +24,33 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      const navbarHeight = navRef.current?.offsetHeight ?? 64;
+      document.documentElement.style.setProperty("--navbar-height", `${navbarHeight}px`);
+    };
+
+    updateNavbarHeight();
+
+    const resizeObserver = new ResizeObserver(updateNavbarHeight);
+    if (navRef.current) resizeObserver.observe(navRef.current);
+
+    window.addEventListener("resize", updateNavbarHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateNavbarHeight);
+    };
+  }, [mobileOpen]);
+
   return (
     <nav
+      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "border-b border-border bg-background/90 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="w-full flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 lg:px-10">
+      <div className="w-full flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 md:px-8 lg:px-10">
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img src={logo} alt="ZeroPhase Esports" className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg" />
           <span className="font-heading text-lg sm:text-xl font-bold tracking-wider text-primary text-glow-cyan">
