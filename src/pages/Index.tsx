@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Trophy, ArrowRight, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroHeadline from "@/components/HeroHeadline";
 import { useGames } from "@/hooks/use-games";
 import { useAtAGlance } from "@/hooks/use-at-a-glance";
 
@@ -32,58 +33,47 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-20">
+      <section className="relative min-h-screen overflow-hidden px-4 pt-[calc(var(--navbar-height,4rem)+1rem)]">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted" />
         <div className="absolute inset-0 scanlines" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-primary/5 blur-[120px] will-change-transform" />
-        <div className="absolute top-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-accent/5 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px] will-change-transform md:h-[600px] md:w-[600px]" />
+        <div className="absolute top-1/3 right-1/4 h-[250px] w-[250px] rounded-full bg-accent/5 blur-[100px] md:h-[400px] md:w-[400px]" />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-2">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="font-heading font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight text-[clamp(2.5rem,11vw,5.5rem)] text-center">
-              <span className="hidden md:block">
-                <span className="text-foreground">THE GRIND.</span>{" "}
-                <span className="text-foreground">THE RISE.</span>
-              </span>
-              <span className="hidden md:block">
-                <span className="text-foreground">THE FALL.</span>{" "}
-                <span className="gradient-text text-glow-cyan">ZEROPHASE!</span>
-              </span>
-              <span className="md:hidden block text-foreground">THE GRIND.</span>
-              <span className="md:hidden block text-foreground">THE RISE.</span>
-              <span className="md:hidden block text-foreground">THE FALL.</span>
-              <span className="md:hidden block gradient-text text-glow-cyan">ZEROPHASE!</span>
-            </h1>
+        <div className="relative z-10 flex min-h-[calc(100svh-var(--navbar-height,4rem)-8rem)] items-center">
+          <div className="mx-auto w-full max-w-5xl px-2 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <HeroHeadline />
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 font-light px-2">
-              India's next-generation esports organization — built on discipline,
-              structure, and the relentless pursuit of competitive excellence.
-            </p>
+              <p className="mx-auto mb-6 max-w-2xl px-2 text-base font-light text-muted-foreground sm:mb-10 sm:text-lg md:text-xl">
+                India's next-generation esports organization — built on discipline,
+                structure, and the relentless pursuit of competitive excellence.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <a href="https://discord.gg/JCwDJDA9Kz" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  className="gradient-primary text-primary-foreground font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 hover:opacity-90 transition-opacity w-full"
-                >
-                  JOIN COMMUNITY
-                </Button>
-              </a>
-              <a href="https://forms.gle/Ubgu3Pb5aKQtNh6s5" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary/30 text-primary hover:bg-primary/10 font-heading font-semibold text-base sm:text-lg tracking-wider px-6 sm:px-8 w-full"
-                >
-                  PARTNER WITH US
-                </Button>
-              </a>
-            </div>
-          </motion.div>
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+                <a href="https://discord.gg/JCwDJDA9Kz" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="gradient-primary w-full px-6 font-heading text-base font-semibold tracking-wider text-primary-foreground transition-opacity hover:opacity-90 sm:px-8 sm:text-lg"
+                  >
+                    JOIN COMMUNITY
+                  </Button>
+                </a>
+                <a href="https://forms.gle/Ubgu3Pb5aKQtNh6s5" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/30 px-6 font-heading text-base font-semibold tracking-wider text-primary hover:bg-primary/10 sm:px-8 sm:text-lg"
+                  >
+                    PARTNER WITH US
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Rolling game strip */}
