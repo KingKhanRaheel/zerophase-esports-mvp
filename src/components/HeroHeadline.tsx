@@ -71,7 +71,7 @@ const HeroHeadline = () => {
             {line.map((phrase) => (
               <span
                 key={phrase.text}
-                className={phrase.accent ? "gradient-text text-glow-cyan" : "text-foreground"}
+                className={`${phrase.accent ? `gradient-text text-glow-cyan ${accentSizeClass}` : `text-foreground ${headlineSizeClass}`}`}
               >
                 {phrase.text}
               </span>
