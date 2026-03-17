@@ -61,7 +61,8 @@ const HeroHeadline = () => {
       <div
         ref={measureRef}
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden opacity-0"
+        className="pointer-events-none absolute left-0 top-0 overflow-visible opacity-0"
+        style={{ width: "max-content" }}
       >
         {pairedLines.map((line, lineIndex) => (
           <div
