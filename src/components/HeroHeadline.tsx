@@ -13,7 +13,7 @@ const pairedLines = [
 ] as const;
 
 const headlineSizeClass = "text-[clamp(2.35rem,8vw,5.5rem)] leading-[0.96]";
-const accentSizeClass = "text-[clamp(2.8rem,9.5vw,6.5rem)] leading-[0.96]";
+const accentSizeClass = "text-[clamp(2.65rem,9.5vw,6.5rem)] leading-[0.96]";
 const pairedLineClass = "flex items-baseline justify-center gap-x-[0.32em] whitespace-nowrap";
 
 const HeroHeadline = () => {
@@ -61,7 +61,8 @@ const HeroHeadline = () => {
       <div
         ref={measureRef}
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden opacity-0"
+        className="pointer-events-none absolute left-0 top-0 overflow-visible opacity-0"
+        style={{ width: "max-content" }}
       >
         {pairedLines.map((line, lineIndex) => (
           <div
