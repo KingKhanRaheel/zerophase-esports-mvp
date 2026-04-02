@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import HeroHeadline from "@/components/HeroHeadline";
 import { useGames } from "@/hooks/use-games";
 import { useAtAGlance } from "@/hooks/use-at-a-glance";
+import HomepageLeadership from "@/components/HomepageLeadership";
+import AnnouncementsSection from "@/components/AnnouncementsSection";
 
 const Index = () => {
   const { data: games } = useGames();
@@ -305,6 +307,8 @@ const Index = () => {
         </div>
       </section>
 
+      <AnnouncementsSection />
+      <HomepageLeadership />
       <Footer />
     </div>
   );
