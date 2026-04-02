@@ -13,6 +13,7 @@ const Teams = () => {
       </div>
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 

@@ -13,6 +13,7 @@ const Sponsors = () => {
       </div>
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 
