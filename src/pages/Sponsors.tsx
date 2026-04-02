@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import SponsorsSection from "@/components/SponsorsSection";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 const Sponsors = () => {
   return (
