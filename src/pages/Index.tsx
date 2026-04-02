@@ -307,6 +307,8 @@ const Index = () => {
         </div>
       </section>
 
+      <AnnouncementsSection />
+      <HomepageLeadership />
       <Footer />
     </div>
   );
