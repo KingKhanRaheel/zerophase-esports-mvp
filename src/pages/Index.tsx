@@ -310,10 +310,12 @@ const Index = () => {
         </div>
       </section>
 
+      <StatsCounter />
       <AnnouncementsSection />
       <HomepageLeadership />
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 
