@@ -9,6 +9,8 @@ import { useGames } from "@/hooks/use-games";
 import { useAtAGlance } from "@/hooks/use-at-a-glance";
 import HomepageLeadership from "@/components/HomepageLeadership";
 import AnnouncementsSection from "@/components/AnnouncementsSection";
+import StatsCounter from "@/components/StatsCounter";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   const { data: games } = useGames();
@@ -31,6 +33,7 @@ const Index = () => {
   const sponsorSpotlight = glance?.sponsorSpotlight;
 
   return (
+    <PageTransition>
     <div className="min-h-screen bg-background">
       <Navbar />
 
@@ -307,10 +310,12 @@ const Index = () => {
         </div>
       </section>
 
+      <StatsCounter />
       <AnnouncementsSection />
       <HomepageLeadership />
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 

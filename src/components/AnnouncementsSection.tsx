@@ -32,28 +32,40 @@ const AnnouncementsSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-card border border-border rounded-lg p-5 sm:p-6 hover:border-primary/30 transition-all duration-300"
+              className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/30 transition-all duration-300"
             >
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="mt-0.5 flex-shrink-0">
-                  <Megaphone className="w-5 h-5 text-primary" />
+              {a.image_url && (
+                <div className="w-full h-40 sm:h-52 overflow-hidden">
+                  <img
+                    src={a.image_url}
+                    alt={a.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-3 mb-1">
-                    <h3 className="text-base sm:text-lg font-heading font-bold text-foreground truncate">
-                      {a.title}
-                    </h3>
-                    {a.published_at && (
-                      <span className="text-xs text-muted-foreground flex-shrink-0">
-                        {format(new Date(a.published_at), "MMM d, yyyy")}
-                      </span>
+              )}
+              <div className="p-5 sm:p-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="mt-0.5 flex-shrink-0">
+                    <Megaphone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3 mb-1">
+                      <h3 className="text-base sm:text-lg font-heading font-bold text-foreground truncate">
+                        {a.title}
+                      </h3>
+                      {a.published_at && (
+                        <span className="text-xs text-muted-foreground flex-shrink-0">
+                          {format(new Date(a.published_at), "MMM d, yyyy")}
+                        </span>
+                      )}
+                    </div>
+                    {a.content && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {a.content}
+                      </p>
                     )}
                   </div>
-                  {a.content && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {a.content}
-                    </p>
-                  )}
                 </div>
               </div>
             </motion.div>
