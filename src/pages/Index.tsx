@@ -33,6 +33,7 @@ const Index = () => {
   const sponsorSpotlight = glance?.sponsorSpotlight;
 
   return (
+    <PageTransition>
     <div className="min-h-screen bg-background">
       <Navbar />
 
