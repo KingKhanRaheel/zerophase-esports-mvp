@@ -9,6 +9,8 @@ import { useGames } from "@/hooks/use-games";
 import { useAtAGlance } from "@/hooks/use-at-a-glance";
 import HomepageLeadership from "@/components/HomepageLeadership";
 import AnnouncementsSection from "@/components/AnnouncementsSection";
+import StatsCounter from "@/components/StatsCounter";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   const { data: games } = useGames();
