@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -87,9 +88,12 @@ const TeamsSection = () => {
                             key={player.id}
                             className="flex items-center justify-between py-2 border-b border-border/50 last:border-0"
                           >
-                            <span className="text-sm font-medium text-foreground">
+                            <Link
+                              to={`/player/${player.id}`}
+                              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                            >
                               {player.ign}
-                            </span>
+                            </Link>
                             <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-2 sm:px-3 py-1 rounded-full">
                               {player.role}
                             </span>
