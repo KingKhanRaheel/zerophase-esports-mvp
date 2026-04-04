@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useAnnouncements } from "@/hooks/use-announcements";
+import { useState, useEffect } from "react";
+import { Megaphone } from "lucide-react";
 
 const games = [
 { name: "BGMI", image: "/images/games/bgmi.jpg" },
@@ -10,12 +13,48 @@ const games = [
 const duplicated = [...games, ...games, ...games, ...games];
 
 const HeroSection = () => {
+  const { data: announcements } = useAnnouncements();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!announcements?.length) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % announcements.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [announcements]);
+
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px]" />
+
+      {/* Auto-scrolling announcement ticker */}
+      {announcements && announcements.length > 0 && (
+        <div className="absolute top-4 left-0 right-0 z-20 flex justify-center px-4">
+          <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 max-w-xl w-full overflow-hidden">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Megaphone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+              <div className="relative flex-1 h-5 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={currentIndex}
+                    initial={{ y: 16, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -16, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 text-xs sm:text-sm text-foreground/80 truncate leading-5"
+                  >
+                    {announcements[currentIndex].title}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.div
