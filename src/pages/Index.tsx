@@ -188,7 +188,7 @@ const Index = () => {
               </div>
               {playerOfMonth ? (
                 <>
-                  <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                  <Link to={`/player/${playerOfMonth.id}`} className="flex items-center gap-3 sm:gap-4 mb-4 group">
                     <img
                       src={
                         playerOfMonth.photo_url ||
@@ -198,14 +198,14 @@ const Index = () => {
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                     />
                     <div>
-                      <span className="text-xl sm:text-2xl font-heading font-bold text-primary block">
+                      <span className="text-xl sm:text-2xl font-heading font-bold text-primary block group-hover:text-primary/80 transition-colors">
                         {playerOfMonth.ign}
                       </span>
                       <span className="text-sm text-muted-foreground">
                         {playerOfMonth.name}
                       </span>
                     </div>
-                  </div>
+                  </Link>
                   <div className="space-y-2 mt-4">
                     <div className="flex items-center justify-between py-1.5 border-b border-border/50">
                       <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
