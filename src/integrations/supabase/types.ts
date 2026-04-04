@@ -161,35 +161,53 @@ export type Database = {
       }
       players: {
         Row: {
+          bio: string
           created_at: string
           display_order: number
+          highlights_embed: string | null
           id: string
           ign: string
+          joined_at: string | null
           name: string
           photo_url: string | null
           role: string
+          social_instagram: string | null
+          social_twitter: string | null
+          social_youtube: string | null
           team_id: string
           updated_at: string
         }
         Insert: {
+          bio?: string
           created_at?: string
           display_order?: number
+          highlights_embed?: string | null
           id?: string
           ign: string
+          joined_at?: string | null
           name: string
           photo_url?: string | null
           role: string
+          social_instagram?: string | null
+          social_twitter?: string | null
+          social_youtube?: string | null
           team_id: string
           updated_at?: string
         }
         Update: {
+          bio?: string
           created_at?: string
           display_order?: number
+          highlights_embed?: string | null
           id?: string
           ign?: string
+          joined_at?: string | null
           name?: string
           photo_url?: string | null
           role?: string
+          social_instagram?: string | null
+          social_twitter?: string | null
+          social_youtube?: string | null
           team_id?: string
           updated_at?: string
         }
