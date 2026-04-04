@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useAnnouncements } from "@/hooks/use-announcements";
+import { useState, useEffect } from "react";
+import { Megaphone } from "lucide-react";
 
 const games = [
 { name: "BGMI", image: "/images/games/bgmi.jpg" },
