@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
-import {
+import { Link } from "react-router-dom";
   Accordion,
   AccordionContent,
   AccordionItem,
