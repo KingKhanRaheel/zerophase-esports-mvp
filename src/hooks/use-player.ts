@@ -13,14 +13,12 @@ export const usePlayer = (id: string | undefined) => {
         .single();
       if (error) throw error;
 
-      // Fetch team + game info
-      const { data: team } = await supabase
-        .from("teams")
-        .select("*, games(*)")
-        .eq("id", player.team_id)
-        .single();
+      const [{ data: team }, { data: highlights }] = await Promise.all([
+        supabase.from("teams").select("*, games(*)").eq("id", player.team_id).single(),
+        supabase.from("player_highlights").select("*").eq("player_id", id!).order("display_order"),
+      ]);
 
-      return { ...player, team };
+      return { ...player, team, highlights: highlights || [] };
     },
   });
 };
