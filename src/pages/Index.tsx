@@ -151,15 +151,16 @@ const Index = () => {
                   </div>
                   <div className="space-y-2 mb-4 sm:mb-6">
                     {((featuredTeam as any).players || []).map((p: any) => (
-                      <div
+                      <Link
                         key={p.id}
-                        className="flex items-center justify-between py-1.5 border-b border-border/50 last:border-0"
+                        to={`/player/${p.id}`}
+                        className="flex items-center justify-between py-1.5 border-b border-border/50 last:border-0 group hover:bg-muted/30 transition-colors rounded px-1 -mx-1"
                       >
-                        <span className="text-sm font-medium text-foreground">{p.ign}</span>
+                        <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{p.ign}</span>
                         <span className="text-xs text-muted-foreground uppercase tracking-wider bg-muted px-2 sm:px-3 py-1 rounded-full">
                           {p.role}
                         </span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </>
