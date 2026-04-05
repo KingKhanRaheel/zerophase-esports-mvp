@@ -139,8 +139,8 @@ const PlayerProfile = () => {
                   </motion.div>
                 )}
 
-                {/* Highlights embed */}
-                {player.highlights_embed && (
+                {/* Highlights */}
+                {player.highlights && player.highlights.length > 0 && (
                   <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,16 @@ const PlayerProfile = () => {
                     className="mt-8 bg-card border border-border rounded-xl p-6 sm:p-8"
                   >
                     <h2 className="text-lg font-heading font-bold text-foreground mb-4">Highlights</h2>
-                    <VideoEmbed url={player.highlights_embed} />
+                    <div className="space-y-6">
+                      {player.highlights.map((h: any) => (
+                        <div key={h.id}>
+                          {h.title && (
+                            <p className="text-sm font-medium text-foreground mb-2">{h.title}</p>
+                          )}
+                          <VideoEmbed url={h.url} />
+                        </div>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </motion.div>
