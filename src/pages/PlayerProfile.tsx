@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import { usePlayer } from "@/hooks/use-player";
 import { format } from "date-fns";
+import VideoEmbed from "@/components/VideoEmbed";
 
 const PlayerProfile = () => {
   const { id } = useParams<{ id: string }>();
@@ -147,10 +148,7 @@ const PlayerProfile = () => {
                     className="mt-8 bg-card border border-border rounded-xl p-6 sm:p-8"
                   >
                     <h2 className="text-lg font-heading font-bold text-foreground mb-4">Highlights</h2>
-                    <div
-                      className="w-full flex justify-center"
-                      dangerouslySetInnerHTML={{ __html: player.highlights_embed }}
-                    />
+                    <VideoEmbed url={player.highlights_embed} />
                   </motion.div>
                 )}
               </motion.div>
